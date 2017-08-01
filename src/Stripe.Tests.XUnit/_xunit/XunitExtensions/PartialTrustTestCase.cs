@@ -7,6 +7,9 @@ namespace Stripe.Tests.XUnit._xunit.XunitExtensions
 {
     public class PartialTrustTestCase : XunitTestCase
     {
+
+        public PartialTrustTestCase() : base() {}
+
         public PartialTrustTestCase(IMessageSink diagnosticMessageSink, TestMethodDisplay defaultMethodDisplay, ITestMethod testMethod)
             : base(diagnosticMessageSink, defaultMethodDisplay, testMethod) { }
 

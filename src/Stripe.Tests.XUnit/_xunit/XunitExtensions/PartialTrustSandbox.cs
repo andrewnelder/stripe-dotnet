@@ -16,8 +16,10 @@ namespace Stripe.Tests.XUnit._xunit.XunitExtensions
     /// <summary>
     /// Represents a partial trust sandbox
     /// </summary>
+
     public class PartialTrustSandbox : IDisposable
     {
+
         private static readonly PartialTrustSandbox _default = new PartialTrustSandbox("Default Partial Trust Sandbox");
         private AppDomain _domain;
 

@@ -1,12 +1,12 @@
 ﻿using Xunit;
 using System;
+using System.Object;
 using System.Net.Http;
 using Stripe.Infrastructure;
 using Xunit.Abstractions;
 
 namespace Stripe.Tests.XUnit
 {
-#if NET45
     public class registry_access : MarshalByRefObject
     {
 
@@ -37,5 +37,4 @@ namespace Stripe.Tests.XUnit
             output.WriteLine(req.Headers.UserAgent.ToString());
         }
     }
-#endif
 }

@@ -77,7 +77,7 @@ namespace Stripe.Infrastructure
             }
             catch
             {
-                result += "unknown";
+                result += "unknown system";
             }
 #endif
 
@@ -87,6 +87,10 @@ namespace Stripe.Infrastructure
 #if NET45
         private static string getFrameworkFromRegistry()
         {
+            if (!AppDomain.CurrentDomain.IsFullyTrusted) {
+                return "unknown framework";
+            }
+
             using (var key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32).OpenSubKey("SOFTWARE\\Microsoft\\NET Framework Setup\\NDP\\v4\\Full\\"))
             {
                 var releaseKey = Convert.ToInt32(key.GetValue("Release"));
